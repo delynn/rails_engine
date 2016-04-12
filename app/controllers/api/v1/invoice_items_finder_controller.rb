@@ -9,6 +9,10 @@ module Api
         respond_with InvoiceItem.find_by(invoice_params)
       end
 
+      def random
+        respond_with InvoiceItem.limit(1).order("RANDOM()")
+      end
+
       private
 
       def invoice_params
