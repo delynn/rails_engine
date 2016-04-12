@@ -4,7 +4,7 @@ FactoryGirl.define do
     credit_card_number 1
     result "MyString"
   end
-
+  
   factory :merchant do
     name "MyString"
   end
