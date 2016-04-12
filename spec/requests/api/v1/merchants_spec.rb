@@ -2,9 +2,9 @@ require "rails_helper"
 
 RSpec.describe "GET /api/v1/merchants" do
   it "returns a list of merchants" do
-    first_merchant  = create(:merchant)
-    second_merchant = create(:merchant)
-    third_merchant  = create(:merchant)
+    first_merchant  = create(:merchant, name: "Wally World")
+    second_merchant = create(:merchant, name: "Target")
+    third_merchant  = create(:merchant, name: "Bevel")
 
     get "/api/v1/merchants"
 
