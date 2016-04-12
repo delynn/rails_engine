@@ -4,4 +4,5 @@ class Invoice < ActiveRecord::Base
   validates :status,      presence: true
   belongs_to :merchant
   has_many :transactions
+  has_many :invoice_items
 end
