@@ -26,8 +26,9 @@ Rails.application.routes.draw do
       get "/merchants/random",    to: "merchants#random"
       resources :merchants,     only: [:index, :show]
 
-      get "/transactions/find",     to: "transactions_finder#show"
-      get "/transactions/find_all", to: "transactions_finder#index"
+      get "/transactions/find",      to: "transactions_finder#show"
+      get "/transactions/find_all",  to: "transactions_finder#index"
+      get "/transactions/random",    to: "transactions_finder#random"
       resources :transactions,    only: [:index, :show]
     end
   end
