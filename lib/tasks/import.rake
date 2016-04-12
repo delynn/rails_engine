@@ -106,6 +106,34 @@ namespace :import do
     puts "Imported #{counter} merchants"
   end
 
+  desc "Import transactions from csv"
+  task transactions: :environment do
+    filename = File.join(Rails.root, "/data", "transactions.csv")
+    counter = 0
+
+    CSV.foreach(filename, headers: true) do |row|
+      transaction = Transaction.create(id: row["id"],
+                                       invoice_id: row["invoice_id"],
+                                       credit_card_number: row["credit_card_number"],
+                                       result: row["result"],
+                                       created_at: row["created_at"],
+                                       updated_at: row["updated_at"])
+      if transaction.errors.any?
+        puts "#{row["id"]} - #{transaction.errors.full_messages.join(", ")}"
+      end
+      counter += 1 if transaction.persisted?
+    end
+
+    puts "Imported #{counter} transactions"
+  end
+
   desc "Import all csv data"
-  task all: [:customers, :invoice_items, :invoices, :items, :merchants]
+  task all: [
+    :customers,
+    :invoice_items,
+    :invoices,
+    :items,
+    :merchants,
+    :transactions
+  ]
 end
