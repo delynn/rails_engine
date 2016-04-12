@@ -42,6 +42,18 @@ FactoryGirl.define do
     customer_id 1
     merchant_id 1
     status "MyString"
+
+
+    factory :invoice_with_transactions do
+
+      transient do
+        transactions_count 3
+      end
+
+      after(:create) do |invoice, evaluator|
+        create_list(:transaction, evaluator.transactions_count, invoice: invoice)
+      end
+    end
   end
 
   factory :invoice_item do
