@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       resources :items,         only: [:index, :show]
 
       get "/merchants/find",      to: "merchants#find"
+      get "/merchants/find_all",  to: "merchants#find_all"
       resources :merchants,     only: [:index, :show]
 
       get "/transactions/find",   to: "transactions_finder#show"
