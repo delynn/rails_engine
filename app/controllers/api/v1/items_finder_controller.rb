@@ -8,7 +8,7 @@ module Api
       private
 
       def item_params
-        params.permit(:id, :name, :unit_price, :merchant_id)
+        params.permit(:id, :name, :unit_price, :merchant_id, :created_at, :updated_at)
       end
     end
   end
