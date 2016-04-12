@@ -9,6 +9,10 @@ module Api
         respond_with Item.find_by(capitalize_hash_values(item_params))
       end
 
+      def random
+        respond_with Item.limit(1).order("RANDOM()")
+      end
+
       private
 
       def item_params
