@@ -3,7 +3,7 @@ class Customer < ActiveRecord::Base
   validates :last_name,  presence: true
 
   before_save do
-    first_name.downcase!
-    last_name.downcase!
+    first_name.capitalize!
+    last_name.capitalize!
   end
 end
