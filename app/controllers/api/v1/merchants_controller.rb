@@ -13,6 +13,10 @@ module Api
         respond_with Merchant.find_by(capitalize_hash_values(merchant_params))
       end
 
+      def find_all
+        respond_with Merchant.where(capitalize_hash_values(merchant_params))
+      end
+
       private
 
       def merchant_params
