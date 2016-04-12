@@ -1,10 +1,17 @@
 FactoryGirl.define do
+  factory :item do
+    name "MyString"
+    description "MyString"
+    unit_price 1
+    merchant_id 1
+  end
+  
   factory :invoice do
     customer_id 1
     merchant_id 1
     status "MyString"
   end
-  
+
   factory :invoice_item do
     item_id 1
     invoice_id 1
