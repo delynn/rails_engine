@@ -13,6 +13,10 @@ module Api
         respond_with Invoice.find_by(capitalize_hash_values(invoice_params))
       end
 
+      def find_all
+        respond_with Invoice.where(capitalize_hash_values(invoice_params))
+      end
+
       private
 
       def invoice_params
