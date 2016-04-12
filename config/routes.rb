@@ -21,11 +21,12 @@ Rails.application.routes.draw do
       get "/items/random",        to: "items_finder#random"
       resources :items,         only: [:index, :show]
 
-      get "/merchants/find",      to: "merchants#find"
-      get "/merchants/find_all",  to: "merchants#find_all"
-      get "/merchants/random",    to: "merchants#random"
-      get "/merchants/:id/items", to: "merchant_items#index"
-      resources :merchants,     only: [:index, :show]
+      get "/merchants/find",         to: "merchants#find"
+      get "/merchants/find_all",     to: "merchants#find_all"
+      get "/merchants/random",       to: "merchants#random"
+      get "/merchants/:id/items",    to: "merchant_items#index"
+      get "/merchants/:id/invoices", to: "merchant_invoices#index"
+      resources :merchants,        only: [:index, :show]
 
       get "/transactions/find",      to: "transactions_finder#show"
       get "/transactions/find_all",  to: "transactions_finder#index"
