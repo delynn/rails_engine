@@ -10,7 +10,7 @@ module Api
       end
 
       def find
-        respond_with Customer.find_by(downcase_hash_values(customer_params))
+        respond_with Customer.find_by(capitalize_hash_values(customer_params))
       end
 
       private

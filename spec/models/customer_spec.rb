@@ -6,10 +6,10 @@ RSpec.describe Customer, "validations" do
 end
 
 RSpec.describe Customer, type: :model do
-  it "downcases attributes when saved" do
+  it "capitalize attributes when saved" do
     customer = Customer.create(first_name: "JULIAN", last_name: "FELICIANO")
 
-    expect(customer.first_name).to eq("julian")
-    expect(customer.last_name).to  eq("feliciano")
+    expect(customer.first_name).to eq("Julian")
+    expect(customer.last_name).to  eq("Feliciano")
   end
 end

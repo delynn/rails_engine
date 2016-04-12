@@ -3,8 +3,8 @@ module Api
     protect_from_forgery with: :null_session
     respond_to :json
 
-    def downcase_hash_values(hash)
-      hash.each_value(&:downcase!)
+    def capitalize_hash_values(hash)
+      hash.each_value(&:capitalize!)
     end
   end
 end

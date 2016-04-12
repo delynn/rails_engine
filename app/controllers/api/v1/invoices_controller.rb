@@ -10,7 +10,7 @@ module Api
       end
 
       def find
-        respond_with Invoice.find_by(downcase_hash_values(invoice_params))
+        respond_with Invoice.find_by(capitalize_hash_values(invoice_params))
       end
 
       private
