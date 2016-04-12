@@ -17,6 +17,10 @@ module Api
         respond_with Customer.where(capitalize_hash_values(customer_params))
       end
 
+      def random
+        respond_with Customer.limit(1).order("RANDOM()")
+      end
+
       private
 
       def customer_params
