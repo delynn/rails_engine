@@ -13,6 +13,10 @@ module Api
         respond_with Customer.find_by(capitalize_hash_values(customer_params))
       end
 
+      def find_all
+        respond_with Customer.where(capitalize_hash_values(customer_params))
+      end
+
       private
 
       def customer_params
