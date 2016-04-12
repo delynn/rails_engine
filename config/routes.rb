@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get "/customers/find",      to: "customers#find"
       get "/customers/find_all",  to: "customers#find_all"
+      get "/customers/random",    to: "customers#random"
       resources :customers,     only: [:index, :show]
 
       get "/invoice_items/find",     to: "invoice_items_finder#show"
