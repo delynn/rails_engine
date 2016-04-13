@@ -14,3 +14,6 @@
 
 # Ignore persisted RSpec data
 /spec/examples.txt
+
+# Ignore SimpleCov
+/coverage

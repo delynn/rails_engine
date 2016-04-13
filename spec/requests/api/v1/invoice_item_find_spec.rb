@@ -13,7 +13,7 @@ RSpec.describe "GET /api/v1/invoice_items/find?attr=value" do
       "item_id"    => second_invoice_item.item_id,
       "invoice_id" => second_invoice_item.invoice_id,
       "quantity"   => second_invoice_item.quantity,
-      "unit_price" => second_invoice_item.unit_price,
+      "unit_price" => format_price(second_invoice_item.unit_price),
       "created_at" => format_date(second_invoice_item.created_at),
       "updated_at" => format_date(second_invoice_item.updated_at)
     })
@@ -25,7 +25,7 @@ RSpec.describe "GET /api/v1/invoice_items/find?attr=value" do
       "item_id"    => third_invoice_item.item_id,
       "invoice_id" => third_invoice_item.invoice_id,
       "quantity"   => third_invoice_item.quantity,
-      "unit_price" => third_invoice_item.unit_price,
+      "unit_price" => format_price(third_invoice_item.unit_price),
       "created_at" => format_date(third_invoice_item.created_at),
       "updated_at" => format_date(third_invoice_item.updated_at)
     })

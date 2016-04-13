@@ -7,7 +7,7 @@ RSpec.describe "GET /api/v1/items/find_all?attr=val" do
     third_item  = create(:item, name: "Things", unit_price: 400)
     fourth_item = create(:item, name: "Yes", unit_price: 400)
 
-    get "/api/v1/items/find_all?unit_price=#{first_item.unit_price}"
+    get "/api/v1/items/find_all?unit_price=3.00"
 
     expect(json_body.count).to eq(2)
 
@@ -16,7 +16,7 @@ RSpec.describe "GET /api/v1/items/find_all?attr=val" do
       "id"          => first_item.id,
       "name"        => first_item.name,
       "description" => first_item.description,
-      "unit_price"  => first_item.unit_price,
+      "unit_price"  => format_price(first_item.unit_price),
       "merchant_id" => first_item.merchant_id,
       "created_at"  => format_date(first_item.created_at),
       "updated_at"  => format_date(first_item.updated_at)

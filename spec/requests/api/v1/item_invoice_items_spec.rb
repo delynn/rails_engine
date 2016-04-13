@@ -9,7 +9,7 @@ RSpec.describe "GET /api/v1/items/:id/invoice_items" do
     get "/api/v1/items/#{item.id}/invoice_items"
 
     expect(json_body.count).to eq(2)
-    
+
     first_item_invoice = item.invoice_items.first
     first_item_invoice_json = json_body[0]
     expect(first_item_invoice_json).to eq({
@@ -17,7 +17,7 @@ RSpec.describe "GET /api/v1/items/:id/invoice_items" do
       "item_id"    => first_item_invoice.item_id,
       "invoice_id" => first_item_invoice.invoice_id,
       "quantity"   => first_item_invoice.quantity,
-      "unit_price" => first_item_invoice.unit_price,
+      "unit_price" => format_price(first_item_invoice.unit_price),
       "created_at" => format_date(first_item_invoice.created_at),
       "updated_at" => format_date(first_item_invoice.updated_at)
     })

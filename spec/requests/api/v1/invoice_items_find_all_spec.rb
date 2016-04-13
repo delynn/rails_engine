@@ -7,7 +7,7 @@ RSpec.describe "GET /api/v1/invoice_items/find_all?attr=value" do
     third_invoice_item  = create(:invoice_item, item_id: 3, unit_price: 600)
     fourth_invoice_item = create(:invoice_item, item_id: 4, unit_price: 600)
 
-    get "/api/v1/invoice_items/find_all?unit_price=#{first_invoice_item.unit_price}"
+    get "/api/v1/invoice_items/find_all?unit_price=3.00"
 
     expect(json_body.count).to eq(2)
 
@@ -17,12 +17,12 @@ RSpec.describe "GET /api/v1/invoice_items/find_all?attr=value" do
       "item_id"    => first_invoice_item.item_id,
       "invoice_id" => first_invoice_item.invoice_id,
       "quantity"   => first_invoice_item.quantity,
-      "unit_price" => first_invoice_item.unit_price,
+      "unit_price" => format_price(first_invoice_item.unit_price),
       "created_at" => format_date(first_invoice_item.created_at),
       "updated_at" => format_date(first_invoice_item.updated_at)
     })
 
-    get "/api/v1/invoice_items/find_all?unit_price=#{third_invoice_item.unit_price}"
+    get "/api/v1/invoice_items/find_all?unit_price=6.00"
 
     expect(json_body.count).to eq(2)
 
@@ -32,7 +32,7 @@ RSpec.describe "GET /api/v1/invoice_items/find_all?attr=value" do
       "item_id"    => third_invoice_item.item_id,
       "invoice_id" => third_invoice_item.invoice_id,
       "quantity"   => third_invoice_item.quantity,
-      "unit_price" => third_invoice_item.unit_price,
+      "unit_price" => format_price(third_invoice_item.unit_price),
       "created_at" => format_date(third_invoice_item.created_at),
       "updated_at" => format_date(third_invoice_item.updated_at)
     })
