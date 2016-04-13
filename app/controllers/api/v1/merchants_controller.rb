@@ -10,11 +10,11 @@ module Api
       end
 
       def find
-        respond_with Merchant.find_by(capitalize_hash_values(merchant_params))
+        respond_with Merchant.find_by(merchant_params)
       end
 
       def find_all
-        respond_with Merchant.where(capitalize_hash_values(merchant_params))
+        respond_with Merchant.where(merchant_params)
       end
 
       def random
