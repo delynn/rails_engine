@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       get "/invoices/:id/invoice_items", to: "invoice_invoice_items#index"
       get "/invoices/:id/items",         to: "invoices#items"
       get "/invoices/:id/customer",      to: "invoice_customer#show"
+      get "/invoices/:id/merchant",      to: "invoice_merchant#show"
       resources :invoices,             only: [:index, :show]
 
       get "/items/find",          to: "items_finder#show"
