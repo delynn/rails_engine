@@ -16,6 +16,7 @@ module Api
       private
 
       def invoice_params
+        convert_unit_price
         params.permit(:id, :item_id, :invoice_id, :quantity, :unit_price, :created_at, :updated_at)
       end
     end
