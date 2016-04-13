@@ -10,11 +10,11 @@ module Api
       end
 
       def find
-        respond_with Customer.find_by(capitalize_hash_values(customer_params))
+        respond_with Customer.find_by(customer_params)
       end
 
       def find_all
-        respond_with Customer.where(capitalize_hash_values(customer_params))
+        respond_with Customer.where(customer_params)
       end
 
       def random
