@@ -16,7 +16,7 @@ RSpec.describe "GET /api/v1/customers/find?attr=value" do
       "updated_at" => format_date(second_customer.updated_at)
     })
 
-    get "/api/v1/customers/find?first_name=#{third_customer.first_name.upcase}"
+    get "/api/v1/customers/find?first_name=#{third_customer.first_name}"
 
     expect(json_body).to eq({
       "id"         => third_customer.id,

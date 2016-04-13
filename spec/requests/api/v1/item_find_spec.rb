@@ -18,7 +18,7 @@ RSpec.describe "GET /api/v1/items/find?attr=value" do
       "updated_at"  => format_date(second_item.updated_at)
     })
 
-    get "/api/v1/items/find?name=#{first_item.name.upcase}"
+    get "/api/v1/items/find?name=#{first_item.name}"
 
     expect(json_body).to eq({
       "id"          => first_item.id,
