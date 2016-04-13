@@ -15,7 +15,7 @@ RSpec.describe "GET /api/v1/invoices/:id/items" do
       "id"          => first_item.id,
       "name"        => first_item.name,
       "description" => first_item.description,
-      "unit_price"  => first_item.unit_price,
+      "unit_price"  => format_price(first_item.unit_price),
       "merchant_id" => first_item.merchant_id,
       "created_at"  => format_date(first_item.created_at),
       "updated_at"  => format_date(first_item.updated_at)

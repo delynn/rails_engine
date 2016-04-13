@@ -12,7 +12,7 @@ RSpec.describe "GET /api/v1/items/:id" do
       "id"          => second_item.id,
       "name"        => second_item.name,
       "description" => second_item.description,
-      "unit_price"  => second_item.unit_price,
+      "unit_price"  => format_price(second_item.unit_price),
       "merchant_id" => second_item.merchant_id,
       "created_at"  => format_date(second_item.created_at),
       "updated_at"  => format_date(second_item.updated_at)
