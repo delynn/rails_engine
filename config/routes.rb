@@ -37,10 +37,11 @@ Rails.application.routes.draw do
       get "/merchants/:id/invoices", to: "merchant_invoices#index"
       resources :merchants,        only: [:index, :show]
 
-      get "/transactions/find",      to: "transactions_finder#show"
-      get "/transactions/find_all",  to: "transactions_finder#index"
-      get "/transactions/random",    to: "transactions_finder#random"
-      resources :transactions,    only: [:index, :show]
+      get "/transactions/find",        to: "transactions_finder#show"
+      get "/transactions/find_all",    to: "transactions_finder#index"
+      get "/transactions/random",      to: "transactions_finder#random"
+      get "/transactions/:id/invoice", to: "transaction_invoice#show"
+      resources :transactions,       only: [:index, :show]
     end
   end
 end
