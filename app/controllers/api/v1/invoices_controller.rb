@@ -21,6 +21,10 @@ module Api
         respond_with Invoice.limit(1).order("RANDOM()")
       end
 
+      def items
+        respond_with Invoice.find(params[:id]).items
+      end
+
       private
 
       def invoice_params
