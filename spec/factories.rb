@@ -65,6 +65,14 @@ FactoryGirl.define do
         create_list(:invoice_item, evaluator.invoice_items_count, invoice: invoice)
       end
     end
+
+    trait :with_items do
+      after(:create) do |invoice|
+        3.times do |i|
+          invoice.items << create(:item, name: "#{i} baby")
+        end
+      end
+    end
   end
 
   factory :invoice_item do
