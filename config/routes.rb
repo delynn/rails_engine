@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      get "/customers/find",             to: "customers#find"
-      get "/customers/find_all",         to: "customers#find_all"
-      get "/customers/random",           to: "customers#random"
-      get "/customers/:id/invoices",     to: "customer_invoices#index"
-      get "/customers/:id/transactions", to: "customer_transactions#index"
+      get "/customers/find",                  to: "customers#find"
+      get "/customers/find_all",              to: "customers#find_all"
+      get "/customers/random",                to: "customers#random"
+      get "/customers/:id/invoices",          to: "customer_invoices#index"
+      get "/customers/:id/transactions",      to: "customer_transactions#index"
       get "/customers/:id/favorite_merchant", to: "customer_favorite_merchant#show"
-      resources :customers,            only: [:index, :show]
+      resources :customers,                 only: [:index, :show]
 
       get "/invoice_items/find",        to: "invoice_items_finder#show"
       get "/invoice_items/find_all",    to: "invoice_items_finder#index"
@@ -33,17 +33,17 @@ Rails.application.routes.draw do
       get "/items/:id/merchant",      to: "item_merchant#show"
       resources :items,             only: [:index, :show]
 
-      get "/merchants/find",         to: "merchants#find"
-      get "/merchants/find_all",     to: "merchants#find_all"
-      get "/merchants/random",       to: "merchants#random"
-      get "/merchants/:id/items",    to: "merchant_items#index"
-      get "/merchants/:id/invoices", to: "merchant_invoices#index"
-      get "/merchants/:id/revenue",  to: "merchant_revenue#show"
+      get "/merchants/find",                                to: "merchants#find"
+      get "/merchants/find_all",                            to: "merchants#find_all"
+      get "/merchants/random",                              to: "merchants#random"
+      get "/merchants/:id/items",                           to: "merchant_items#index"
+      get "/merchants/:id/invoices",                        to: "merchant_invoices#index"
+      get "/merchants/:id/revenue",                         to: "merchant_revenue#show"
       get "/merchants/:id/customers_with_pending_invoices", to: "merchant_pending_invoice_customers#index"
-      get "/merchants/:id/favorite_customer", to: "merchant_favorite_customer#show"
-      get "/merchants/most_revenue", to: "merchants_revenue#index"
-      get "/merchants/revenue",      to: "merchants_revenue#show"
-      resources :merchants,        only: [:index, :show]
+      get "/merchants/:id/favorite_customer",               to: "merchant_favorite_customer#show"
+      get "/merchants/most_revenue",                        to: "merchants_revenue#index"
+      get "/merchants/revenue",                             to: "merchants_revenue#show"
+      resources :merchants,                               only: [:index, :show]
 
       get "/transactions/find",        to: "transactions_finder#show"
       get "/transactions/find_all",    to: "transactions_finder#index"
