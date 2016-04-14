@@ -2,9 +2,7 @@ module Api
   module V1
     class CustomerTransactionsController < ApiController
       def index
-        respond_with Invoice.where(customer_id: params[:id])
-                            .map(&:transactions)
-                            .flatten
+        respond_with Invoice.transactions(params[:id])
       end
     end
   end

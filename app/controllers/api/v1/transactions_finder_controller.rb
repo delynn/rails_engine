@@ -10,7 +10,7 @@ module Api
       end
 
       def random
-        respond_with Transaction.limit(1).order("RANDOM()")
+        respond_with Transaction.random
       end
 
       private

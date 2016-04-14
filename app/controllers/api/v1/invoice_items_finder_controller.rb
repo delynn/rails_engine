@@ -10,7 +10,7 @@ module Api
       end
 
       def random
-        respond_with InvoiceItem.limit(1).order("RANDOM()")
+        respond_with InvoiceItem.random
       end
 
       private
