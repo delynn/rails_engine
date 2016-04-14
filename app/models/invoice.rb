@@ -21,4 +21,9 @@ class Invoice < ActiveRecord::Base
   scope :merchant_pending_invoice_customers, -> merchant_id {
     (where(merchant_id: merchant_id).joins(:transactions).where("transactions.result = ?", "failed").map(&:customer).uniq)
   }
+
+  scope :revenue_for_date, -> date {
+    total_revenue = (joins(:invoice_items).where("invoices.created_at = ?", date).sum("quantity * unit_price").to_f / 100).to_s
+    { "total_revenue" => total_revenue }
+  }
 end
