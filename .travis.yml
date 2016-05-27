@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+  - 2.2.2
+services:
+- postgresql
+script:
+  - bundle install
+  - bundle exec rake db:setup
+  - bundle exec rake
+addons:
+    code_climate:
+        repo_token: 80c8ee8e5af41efcd37f0a43f7042164870350a2e7bcd5f43638e3ddd2be372a
+cache: bundler
