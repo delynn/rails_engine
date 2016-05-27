@@ -8,20 +8,21 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem "responders", "~> 2.0"
-gem "active_model_serializers", github: "rails-api/active_model_serializers"
+gem 'responders', '~> 2.0'
+gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 
 group :development, :test do
   gem 'byebug'
-  gem "rspec-rails", "~> 3.0"
-  gem "factory_girl_rails"
-  gem "pry-rails"
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
+  gem 'pry-rails'
 end
 
 group :test do
-  gem "database_cleaner"
-  gem "shoulda-matchers", "~> 3.1"
-  gem "simplecov", require: false
+  gem 'database_cleaner'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'simplecov', require: false
+  gem 'codeclimate-test-reporter', require: nil
 end
 
 group :development do
