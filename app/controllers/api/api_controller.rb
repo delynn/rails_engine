@@ -28,7 +28,7 @@ module Api
     end
 
     def convert_unit_price
-      if params.keys.include? "unit_price"
+      if params.keys.include? 'unit_price'
         params[:unit_price] = (params[:unit_price].to_f * 100).round
       end
     end
