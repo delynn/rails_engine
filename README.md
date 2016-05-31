@@ -1,7 +1,5 @@
 # Rails Engine
 
-[![Code Climate](https://codeclimate.com/github/julsfelic/rails_engine/badges/gpa.svg)](https://codeclimate.com/github/julsfelic/rails_engine) [![Test Coverage](https://codeclimate.com/github/julsfelic/rails_engine/badges/coverage.svg)](https://codeclimate.com/github/julsfelic/rails_engine/coverage) [![Issue Count](https://codeclimate.com/github/julsfelic/rails_engine/badges/issue_count.svg)](https://codeclimate.com/github/julsfelic/rails_engine) ![build](https://travis-ci.org/julsfelic/rails_engine.svg?branch=master)
-
 The Rails Engine project takes in CSV data from the [Black Thursday repo](https://github.com/turingschool/curriculum/blob/master/source/projects/black_thursday.markdown)
 and creates a RESTful Rails API that includes record endpoints, relationship endpoints,
 and business intelligence endpoints.
